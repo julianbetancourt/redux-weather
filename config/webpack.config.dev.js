@@ -57,6 +57,10 @@ module.exports = {
         query: require('./babel.dev')
       },
       {
+        test: /\.sass$/,
+        loaders: ['style', 'css', 'postcss', 'sass']
+      },
+      {
         test: /\.css$/,
         include: srcPath,
         loader: 'style!css!postcss'
