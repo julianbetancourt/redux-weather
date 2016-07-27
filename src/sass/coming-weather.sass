@@ -1,0 +1,42 @@
+.coming-weather
+  height: 25%
+  background: rgba(207, 207, 207, 0.3)
+  margin: 0
+  list-style: none
+  padding: 0
+  display: flex
+  justify-content: space-between
+  border-radius: 0 0 .6em .6em
+  &__item
+    width: 20%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border-right: 1px solid #616161
+    text-transform: uppercase
+    justify-content: space-around
+    &__date
+      background: rgba(0,0,0,0.3)
+      padding: 0em 1em
+      border-radius: 10em
+      color: white
+    i
+      font-size: 1.5em
+      color: white
+    &__temp
+      font-size: 1.2em
+      color: white
+  &__item:last-child
+    border-right: none
+
+@media (max-width: 540px)
+  .coming-weather
+    flex-direction: column
+    height: 30%
+    &__item
+      width: 100%
+      height: 20%
+      flex-direction: row
+      border-right: none
+      border-bottom: 1px solid #616161

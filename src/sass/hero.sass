@@ -1,0 +1,79 @@
+.hero
+  height: 75%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  padding: 2em 2.8em
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1430609098125-581618d0482f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=9fe2ffe3b97c96c4c2dd690dcfcff4e1')
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+  border-radius: .6em .6em 0 0
+
+
+.city
+  display: flex
+  justify-content: space-between
+  span
+    color: rgba(255,255,255, 0.6)
+    font-weight: 600
+    text-transform: uppercase
+    font-size: 2em
+    letter-spacing: .08em
+  input
+    align-self: center
+    background: rgba(255, 255, 255, 0.3)
+    border: none
+    border-radius: 10em
+    padding-left: .8em
+    &::placeholder
+      color: rgba(255, 255, 255, 0.6)
+
+.current-weather
+  display: flex
+  //background: rgba(0,0,0,0.7)
+  width: 40%
+  flex-wrap: wrap
+  color: rgba(255,255,255, 0.6)
+  &__temp
+    width: 50%
+    color: rgba(255,255,255, 0.6)
+    font-size: 3.7em
+    text-align: center
+    border-right: 1px solid white
+    span
+      font-size: 1em
+  &__icon
+    width: 50%
+    //background: gold
+    font-size: 3.7em
+    text-align: center
+    align-self: center
+  &__description
+    width: 100%
+    text-align: center
+    font-size: 2em
+    border-top: 1px solid white
+
+@media (max-width: 920px)
+  .city
+    span
+      font-size: 1.5em
+  .current-weather
+    &__temp,
+    &__icon
+      font-size: 2em
+    &__description
+      font-size: 1.5em
+
+@media (max-width: 540px)
+  .hero
+    height: 70%
+  .city
+    flex-direction: column
+    position: relative
+    top: 243px
+    span
+      text-align: center
+  .current-weather
+    width: 100%
