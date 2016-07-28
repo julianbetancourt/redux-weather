@@ -7,7 +7,8 @@ const currentWeather = (state = initialState.currentWeather, action) => {
       return Object.assign({}, state, {
         temp: action.temp,
         icon: action.icon,
-        description: action.description
+        description: action.description,
+        unit: "F"
       });
     default:
       return state

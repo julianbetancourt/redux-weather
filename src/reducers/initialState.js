@@ -1,5 +1,4 @@
 export default {
-  unit: "F",
   city: {
     cityName: "",
     cityLat: "",
@@ -8,9 +7,30 @@ export default {
   currentWeather: {
     temp: "",
     icon: "",
-    description: ""
+    description: "",
+    unit: "F"
   },
   comingWeather: [
+    {
+      day: "",
+      icon: "",
+      temp: ""
+    },
+    {
+      day: "",
+      icon: "",
+      temp: ""
+    },
+    {
+      day: "",
+      icon: "",
+      temp: ""
+    },
+    {
+      day: "",
+      icon: "",
+      temp: ""
+    },
     {
       day: "",
       icon: "",

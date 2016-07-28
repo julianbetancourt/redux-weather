@@ -1,5 +1,6 @@
 import * as types from './actionTypes';
 import axios from 'axios';
+import moment from 'moment';
 
 export const getInitialWeatherSuccess = (temp, icon, description) => {
   return {
@@ -24,9 +25,10 @@ export const getInitialWeather = () => {
   }
 }
 
-export const getComingWeatherSuccess = () => {
+export const getComingWeatherSuccess = (coming) => {
   return {
-    type: types.GET_COMING_WEATHER_SUCCESS
+    type: types.GET_COMING_WEATHER_SUCCESS,
+    coming
   }
 }
 
@@ -34,7 +36,17 @@ export const getComingWeather = () => {
   return (dispatch, getState) => {
     const key = '5131d39e11970addaf8136e9673ebea0';
     const city = getState().city.cityName;
-    const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}`;
-    axios.get(url).then(data => console.log(data.data))
+    const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}&units=imperial`;
+    axios.get(url).then(data => {
+      const newJSON = data.data.list.filter(item => item.dt_txt.includes("12:00:00"));
+      const comingDays = newJSON.map((day, i) => {
+        return {
+          temp: newJSON[i].main.temp,
+          icon: newJSON[0].weather[0].icon,
+          day: moment().add(i + 1, 'days').format('ddd')
+        }
+      })
+      dispatch(getComingWeatherSuccess(comingDays))
+    });
   }
 }
