@@ -24,3 +24,32 @@ export const getInitialCity = (dispatch) => {
       .then(data => dispatch(getForecast()))
   }
 }
+
+export const getCityName = (city) => {
+  return {
+    type: types.GET_CITY_NAME,
+    city
+  }
+}
+
+export const cleanInput = () => {
+  return {
+    type: types.CLEAN_INPUT
+  }
+}
+
+export const getNewCity = (dispatch) => {
+  return (dispatch, getState) => {
+    const key = '5131d39e11970addaf8136e9673ebea0';
+    const city = getState().textInput;
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`;
+    axios.get(url)
+      .then(data => {
+        const city = data.data.name;
+        const country = data.data.sys.country;
+        dispatch(getInitialCitySuccess(`${city},${country}`, data.data.coord.lat, data.data.coord.lon))
+      })
+      .then(data => dispatch(getInitialWeather()))
+      .then(data => dispatch(getForecast()))
+  }
+}

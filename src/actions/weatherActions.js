@@ -50,3 +50,16 @@ export const getForecast = () => {
     });
   }
 }
+
+export const toggleUnitSuccess = (state) => {
+  return {
+    type: types.TOGGLE_UNIT,
+    payload: state
+  }
+}
+
+export const toggleUnit = () => {
+  return (dispatch, getState) => {
+    dispatch(toggleUnitSuccess(getState()))
+  }
+}

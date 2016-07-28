@@ -1,4 +1,5 @@
 export default {
+  textInput: "",
   city: {
     cityName: "",
     cityLat: "",
