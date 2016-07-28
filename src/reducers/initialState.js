@@ -10,7 +10,7 @@ export default {
     description: "",
     unit: "F"
   },
-  comingWeather: [
+  forecast: [
     {
       day: "",
       icon: "",

@@ -1,7 +1,7 @@
 import * as types from './actionTypes';
 import axios from 'axios';
 import { getInitialWeather } from './weatherActions';
-import { getComingWeather } from './weatherActions';
+import { getForecast } from './weatherActions';
 
 export const getInitialCitySuccess = (city, lat, long) => {
   return {
@@ -21,6 +21,6 @@ export const getInitialCity = (dispatch) => {
         dispatch(getInitialCitySuccess(`${city},${country}`, data.data.lat, data.data.lon))
       })
       .then(data => dispatch(getInitialWeather()))
-      .then(data => dispatch(getComingWeather()))
+      .then(data => dispatch(getForecast()))
   }
 }

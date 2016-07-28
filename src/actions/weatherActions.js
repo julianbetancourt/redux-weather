@@ -25,14 +25,14 @@ export const getInitialWeather = () => {
   }
 }
 
-export const getComingWeatherSuccess = (coming) => {
+export const getForecastSuccess = (coming) => {
   return {
-    type: types.GET_COMING_WEATHER_SUCCESS,
+    type: types.GET_FORECAST_SUCCESS,
     coming
   }
 }
 
-export const getComingWeather = () => {
+export const getForecast = () => {
   return (dispatch, getState) => {
     const key = '5131d39e11970addaf8136e9673ebea0';
     const city = getState().city.cityName;
@@ -46,7 +46,7 @@ export const getComingWeather = () => {
           day: moment().add(i + 1, 'days').format('ddd')
         }
       })
-      dispatch(getComingWeatherSuccess(comingDays))
+      dispatch(getForecastSuccess(comingDays))
     });
   }
 }

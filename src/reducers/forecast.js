@@ -2,13 +2,13 @@ import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
 
-const comingWeather = (state = initialState.comingWeather, action) => {
+const forecast = (state = initialState.forecast, action) => {
   switch (action.type) {
-    case types.GET_COMING_WEATHER_SUCCESS:
+    case types.GET_FORECAST_SUCCESS:
       return action.coming
     default:
       return state
   }
 }
 
-export default comingWeather;
+export default forecast;

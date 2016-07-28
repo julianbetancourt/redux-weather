@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import city from './city';
 import currentWeather from './currentWeather';
-import comingWeather from './comingWeather';
+import forecast from './forecast';
 
 const rootReducer = combineReducers({
   unit: "F",
   city,
   currentWeather,
-  comingWeather
+  forecast
 });
 
 export default rootReducer;
