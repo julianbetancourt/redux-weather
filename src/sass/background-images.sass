@@ -1,0 +1,113 @@
+$day-cloudy: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/XW9XDRP5VQ.jpg'
+$day-cloudy-gusts: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/49108VLTH2.jpg'
+$day-fog: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/PYK13GFGGB.jpg'
+$day-rain: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/A3GM7T9ZDV.jpg'
+$day-snow: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/UJ82B81FZA.jpg'
+$day-sunny: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/UME7EFXY5Q.jpg'
+$day-thunderstorm: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/TEZFRP1VA8.jpg'
+
+$night-clear: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/FNTB9JK55T.jpg'
+$night-cloudy: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/GWNKZ945HK.jpg'
+$night-cloudy-gusts: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/87OXNY7BSP.jpg'
+$night-fog: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/290456198D.jpg'
+$night-rain: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/9VB7KQ1V0L.jpg'
+$night-snow: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/1Q76J8O82Z.jpg'
+$night-thunderstorm: 'https://snap-photos.s3.amazonaws.com/img-thumbs/960w/NCDRQYPBG9.jpg'
+
+$gradient: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))
+
+=background-image($image)
+  background-image: $gradient, url($image)
+
+=background-image-no-pseudo($image)
+  &::before
+    content: ''
+    display: none
+    background-image: $gradient, url($image)
+
+
+.hero.wi-day-sunny
+  +background-image-no-pseudo($day-sunny)
+
+.hero.wi-night-clear
+  +background-image-no-pseudo($night-clear)
+
+.hero.wi-day-cloudy, .hero.wi-day-cloudy-gusts
+  +background-image-no-pseudo($day-cloudy)
+
+.hero.wi-night-cloudy, .hero.wi-night-cloudy-gusts
+  +background-image-no-pseudo($night-cloudy)
+
+.hero.wi-day-cloudy-gusts
+  +background-image-no-pseudo($day-cloudy-gusts)
+
+.hero.wi-night-cloudy-gusts
+  +background-image-no-pseudo($night-cloudy-gusts)
+
+.hero.wi-day-sprinkle, .hero.wi-day-rain
+  +background-image-no-pseudo($day-rain)
+
+.hero.wi-night-sprinkle, .hero.wi-night-rain
+  +background-image-no-pseudo($night-rain)
+
+.hero.wi-day-thunderstorm
+  +background-image-no-pseudo($day-thunderstorm)
+
+.hero.wi-night-thunderstorm
+  +background-image-no-pseudo($night-thunderstorm)
+
+.hero.wi-day-snow
+  +background-image-no-pseudo($day-snow)
+
+.hero.wi-night-snow
+  +background-image-no-pseudo($night-snow)
+
+.hero.wi-day-fog
+  +background-image-no-pseudo($day-fog)
+
+.hero.wi-night-fog
+  +background-image-no-pseudo($night-fog)
+
+//body background
+
+.container.wi-day-sunny
+  +background-image($day-sunny)
+
+.container.wi-night-clear
+  +background-image($night-clear)
+
+.container.wi-day-cloudy, .hero.wi-day-cloudy-gusts
+  +background-image($day-cloudy)
+
+.container.wi-night-cloudy, .hero.wi-night-cloudy-gusts
+  +background-image($night-cloudy)
+
+.container.wi-day-cloudy-gusts
+  +background-image($day-cloudy-gusts)
+
+.container.wi-night-cloudy-gusts
+  +background-image($night-cloudy-gusts)
+
+.container.wi-day-sprinkle, .hero.wi-day-rain
+  +background-image($day-rain)
+
+.container.wi-night-sprinkle, .hero.wi-night-rain
+  +background-image($night-rain)
+
+.container.wi-day-thunderstorm
+  +background-image($day-thunderstorm)
+
+.container.wi-night-thunderstorm
+  +background-image($night-thunderstorm)
+
+.container.wi-day-snow
+  +background-image($day-snow)
+
+.container.wi-night-snow
+  +background-image($night-snow)
+
+.container.wi-day-fog
+  +background-image($day-fog)
+
+.container.wi-night-fog
+  +background-image($night-fog)
