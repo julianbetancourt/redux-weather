@@ -4,6 +4,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+//var css = require("!raw!sass!../src/sass/main.sass");
+
 // TODO: hide this behind a flag and eliminate dead code on eject.
 // This shouldn't be exposed to the user.
 var isInNodeModules = 'node_modules' ===
@@ -53,13 +55,18 @@ module.exports = {
         query: require('./babel.prod')
       },
       {
-        test: /\.css$/,
-        include: srcPath,
-        // Disable autoprefixer in css-loader itself:
-        // https://github.com/webpack/css-loader/issues/281
-        // We already have it thanks to postcss.
-        loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss')
+        test: /(\.css|\.sass)$/,
+        loader: ExtractTextPlugin.extract('css?sourceMap!postcss!sass?sourceMap')
       },
+      // {
+      //   test: /(\.css|\.sass)$/,
+      //   include: srcPath,
+      //   // Disable autoprefixer in css-loader itself:
+      //   // https://github.com/webpack/css-loader/issues/281
+      //   // We already have it thanks to postcss.
+      //   //loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss')
+      //   loader: ExtractTextPlugin.extract('style', 'css?!sass!postcss')
+      // },
       {
         test: /\.json$/,
         loader: 'json'
