@@ -19,6 +19,6 @@ It will also let you search cities to get the mentioned data.
 
 ## Others
 1. API by [Open Weather](http://openweathermap.org/)
-2. Images by [Unsplash](https://unsplash.com)
+2. Images by [StockSnap](https://stocksnap.io)
 3. Fonts by [Google Fonts](https://fonts.google.com/)
 4. Design inspired by [this shot](https://dribbble.com/shots/1081917-WhereTO-App)
