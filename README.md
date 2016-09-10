@@ -9,6 +9,9 @@ It will also let you search cities to get the mentioned data.
 3. ```npm start```
 4. Open http://localhost:3000
 
+## Online
+You can see the project live at http://iweather.neocities.org/
+
 ## Main Technologies Used
 1. create-react-app (Webpack, Babel, React)
 2. Redux (react-redux, redux-thunk)
