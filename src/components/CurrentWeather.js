@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import startCase from 'lodash/startCase';
 
 class CurrentWeather extends Component {
   render() {
@@ -10,7 +10,7 @@ class CurrentWeather extends Component {
           {Math.round(temp*10)/10}º{unit}
         </span>
         <i className={`wi current-weather__icon ${icon}`}></i>
-        <span className="current-weather__description">{_.startCase(description)}</span>
+        <span className="current-weather__description">{startCase(description)}</span>
       </div>
     );
   }
