@@ -42,7 +42,9 @@ export const getNewCity = (dispatch) => {
   return (dispatch, getState) => {
     const key = '5131d39e11970addaf8136e9673ebea0';
     const city = getState().textInput;
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`;
+    let unit = getState().currentWeather.unit;
+    unit = unit === 'F' ? 'imperial' : 'metric';
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=${unit}`;
     axios.get(url)
       .then(data => {
         const city = data.data.name;

@@ -18,8 +18,7 @@ const currentWeather = (state = initialState.currentWeather, action) => {
       return Object.assign({}, state, {
         temp: action.temp,
         icon: action.icon,
-        description: action.description,
-        unit: "F"
+        description: action.description
       });
     case types.TOGGLE_UNIT:
       if (state.unit === "F") {
