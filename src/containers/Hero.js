@@ -6,9 +6,6 @@ import { toggleUnit } from '../actions/weatherActions';
 import { getNewCity, getCityName, cleanInput } from '../actions/cityActions';
 
 class Hero extends Component {
-  componentWillMount() {
-    console.log(this.props.city);
-  }
   render() {
     const { city, temp, icon, description, unit, toggleUnit, getNewCity, getCityName, cleanInput } = this.props;
     return (

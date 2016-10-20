@@ -16,7 +16,9 @@ export const getInitialWeather = () => {
     const key ='5131d39e11970addaf8136e9673ebea0';
     const lat = getState().city.cityLat;
     const long = getState().city.cityLong;
-    const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}&units=imperial`;
+    let unit = getState().currentWeather.unit;
+    unit = unit === 'F' ? 'imperial' : 'metric';
+    const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}&units=${unit}`;
     axios.get(url).then(data => dispatch(getInitialWeatherSuccess(
       data.data.main.temp,
       data.data.weather[0].icon,
@@ -38,7 +40,7 @@ export const getForecast = () => {
     const city = getState().city.cityName;
     let unit = getState().currentWeather.unit;
     unit = unit === 'F' ? 'imperial' : 'metric';
-    const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}&units=${unit}`;    
+    const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}&units=${unit}`;
     axios.get(url).then(data => {
       const newJSON = data.data.list.filter(item => item.dt_txt.includes("12:00:00"));
       const comingDays = newJSON.map((day, i) => {
